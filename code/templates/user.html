@@ -20,25 +20,48 @@
 	<center>
 	<h1>Enter your details</h1>
 
-	<form id="form-user" action='/user' method="post">
+	<form id="form-user" action='/saveuserdetails' method="post">
 	<div>
 		<label >Name * <span>:</span></label>
-	    <input style="margin-left: 65px" type="text"/>
+	    <input style="margin-left: 65px" type="text" name="nm"/>
 	</div>
 	    <br>
 	    <br>
 	 <div>
 	    <label >Contact Number <span> * :</span></label>
-	    <input type="tel"/>
+	    <input type="tel" name="con"/>
 	</div>
 	<br>
 	<br>
 		<div>
-	    <label style="margin-right: 9px" >Enter Address <span> * :</span></label>
-	    <button style="margin-right: 40px;margin-left: 19px">Access Location</button>
-<br>
+	    <label style="margin-right: 17px" >Enter Address <span> * :</span></label>
+	    <input type="text" name="addr"/>
+		<br>
 	</div>
-
+		<br>
+	<br>
+		<div>
+	    <label style="margin-right: 84px" >City<span> * :</span></label>
+	    <input type="text" name="cit"/>
+		<br>
+	</div>
+	<br>
+	<br>
+		<div>
+	    <label style="margin-right: 52px" >Pincode<span> * :</span></label>
+	    <input type="text" name="pin"/>
+		<br>
+	</div>
+		<br>
+	<br>
+		<div>
+	    <label style="margin-right: 72px" >State <span> * :</span></label>
+	    <input type="text" name="stat"/>
+		<br>
+	</div>
+	<br>
+	<br>
+	<button class="button" type ="submit"><span>Submit </span></button>
 
 	<center>
 

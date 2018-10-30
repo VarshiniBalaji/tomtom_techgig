@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style type="text/css">
+  header {
+        background-color: #666;
+        padding: 2px;
+        text-align: center;
+        font-size: 20px;
+        color: white;
+    }
+    .button {
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 10px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 30px;
+
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>
+
+<header>
+    <h1>TomTom India Hackathon</h1>
+</header>
+  <br>
+</head>
+<body>
+<center>
+<h1>Select your preference</h1>
+
+<form id="form-user" action='/ll' method="">
+<button class="button" type ="submit" style="width:440px"><span>View user address with latitude and longitude </span></button>
+<br>
+</form>
+<form id="form-admin" action='/admin' method="">
+<button class="button" type ="submit" style="width:440px"><span>View optimised route to travel</span></button>
+</form>
+</center>
+</body>
+</html>

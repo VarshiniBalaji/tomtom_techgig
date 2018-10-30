@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request
 from savedata import saveusrdata
+from latnlog import latlog
 import datetime
+import pandas as pd
 
 app = Flask(__name__,template_folder='templates')
 
@@ -14,7 +16,8 @@ def user():
 
 @app.route('/admin')
 def admin():
-   return 'admin'
+   return render_template('admin.html')
+
 
 @app.route('/saveuserdetails',methods = ['POST', 'GET'])
 def saveuserdetails():
@@ -33,6 +36,14 @@ def saveuserdetails():
          return render_template('userdetails.html')
       else:
          print("error")
+
+@app.route('/ll')
+def ll():
+   # latlog()
+   df=pd.read_csv('db/data.csv')
+   print(df)
+   df.to_html('templates/df.html')
+   return render_template('df.html')
 
 if __name__ == '__main__':
    app.run(debug = True)

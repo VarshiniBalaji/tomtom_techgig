@@ -1,6 +1,6 @@
-timestamp,name,contactno,address,pincode,city,state,latitude,longitude
-1,1,1,1,1,1,1,0,0
-2018-10-31 20:10:25.923456,varshini,9840841496,"no 3b, kaliamman koil road",chennai,600092,tamil nadu,13.06127,80.25577
-2018-10-31 20:10:31.857035,Jerin,9840754812,"no 29, ramakrishna mutt road",Chennai,600028,tamil nadu,13.0323,80.26753
-2018-10-31 20:10:39.207923,Imaya,9840754812,"no 9, masudi colony, 13th street",Chennai,600032,tamil nadu,12.99994,80.20867
-2018-10-31 20:10:47.189127,vetri,9750814875,"15,saraswathi plots,Officers colony 3rd street,Porur,Chennai",Chennai,600116,tamil nadu,13.03584,80.15884
+timestamp,name,contactno,address,pincode,city,state
+1,1,1,1,1,1,1
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,

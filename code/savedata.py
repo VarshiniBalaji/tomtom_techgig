@@ -33,10 +33,11 @@ def latlog(data):
 		if(i!='1' and j!='1' and k!='1'):
 			tomtomgeo = 'https://api.tomtom.com/search/2/geocode/{}.json?countrySet=IN&lat=20.5937&lon=78.9629&key={}'.format(str(i)+str(j)+str(k),api_token)
 			req = requests.get(tomtomgeo)
-			req.status_code
-			a=req.json()
-			lat=a['results'][1]['position']['lat']
-			lon=a['results'][1]['position']['lon']
+			#req.status_code
+			b=req.json()
+			print(b)
+			lat=b['results'][0]['position']['lat']
+			lon=b['results'][0]['position']['lon']
 			la.append(lat)
 			lo.append(lon)
 		else:

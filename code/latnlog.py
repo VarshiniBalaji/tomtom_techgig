@@ -22,8 +22,9 @@ def latlog():
 			req = requests.get(tomtomgeo)
 			req.status_code
 			a=req.json()
-			lat=a['results'][1]['position']['lat']
-			lon=a['results'][1]['position']['lon']
+			print(a)
+			lat=a['results'][0]['position']['lat']
+			lon=a['results'][0]['position']['lon']
 			la.append(lat)
 			lo.append(lon)
 		else:

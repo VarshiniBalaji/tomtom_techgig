@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 from savedata import saveusrdata
-from latnlog import latlog
+#from latnlog import latlog
 import datetime
 import pandas as pd
 

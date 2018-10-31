@@ -3,6 +3,7 @@ from savedata import saveusrdata
 #from latnlog import latlog
 import datetime
 import pandas as pd
+from optpath import path,start_point
 
 app = Flask(__name__,template_folder='templates')
 
@@ -42,8 +43,15 @@ def ll():
    # latlog()
    df=pd.read_csv('db/data.csv')
    print(df)
-   df.to_html('templates/df.html')
-   return render_template('df.html')
+   df[1:].to_html('templates/df.html')
+   return render_template('table.html')
+
+@app.route('/opt')
+def opt():
+   st_ll=start_point(data='perungudi garbage dump yard chennai,600096')
+   p=path(st_ll=st_ll)
+   print(p)
+   return render_template('graph.html',p=p[0])
 
 if __name__ == '__main__':
    app.run(debug = True)

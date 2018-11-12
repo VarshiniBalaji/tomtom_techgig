@@ -25,7 +25,7 @@ def km(lat1,lon1,lat2,lon2):
     return distance
 
 def path(st_ll):
-    df=pd.read_csv('db/data.csv')
+    df=pd.read_csv('db/datall.csv')
     df=df[1:]
     name=list(df['name'])
     lat=list(df['latitude'])

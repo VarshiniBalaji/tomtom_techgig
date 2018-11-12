@@ -10,60 +10,59 @@
 	        font-size: 20px;
 	        color: white;
 	    }
+    .button {
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 10px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 30px;
+}
 
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
 
-	</style>
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>
+
 
 	<header>
 	    <h1>TomTom India Hackathon</h1>
 	</header>
 	<center>
-	<h1>Enter your details</h1>
-
-	<form id="form-user" action='/saveuserdetails' method="post">
-	<div>
-		<label >Name * <span>:</span></label>
-	    <input style="margin-left: 65px" type="text" name="nm"/>
-	</div>
-	    <br>
-	    <br>
-	 <div>
-	    <label >Contact Number <span> * :</span></label>
-	    <input type="tel" name="con"/>
-	</div>
-	<br>
-	<br>
-		<div>
-	    <label style="margin-right: 17px" >Enter Address <span> * :</span></label>
-	    <input type="text" name="addr"/>
-		<br>
-	</div>
-		<br>
-	<br>
-		<div>
-	    <label style="margin-right: 84px" >City<span> * :</span></label>
-	    <input type="text" name="cit"/>
-		<br>
-	</div>
-	<br>
-	<br>
-		<div>
-	    <label style="margin-right: 52px" >Pincode<span> * :</span></label>
-	    <input type="text" name="pin"/>
-		<br>
-	</div>
-		<br>
-	<br>
-		<div>
-	    <label style="margin-right: 72px" >State <span> * :</span></label>
-	    <input type="text" name="stat"/>
-		<br>
-	</div>
-	<br>
-	<br>
-	<button class="button" type ="submit"><span>Submit </span></button>
-
-	<center>
-
-	</head>
-	</html>
+	<h1>Select your Preference</h1>
+<form id="form-user" action='/user_reg' method="">
+<button class="button" type ="submit"><span>REGISTER</span></button>
+<br>
+</form>
+<form id="form-admin" action='/user_login' method="">
+<button class="button" type ="submit"><span>LOGIN</span></button>
+</form>
+</center>
+</body>
+</html>

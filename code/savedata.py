@@ -46,4 +46,4 @@ def latlog(data):
 	data['latitude']=la
 	data['longitude']=lo
 	print("list",la,lo)
-	data.to_csv('db/data.csv',index=False)
+	data.to_csv('db/datall.csv',index=False)

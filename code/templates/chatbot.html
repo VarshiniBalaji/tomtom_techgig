@@ -123,6 +123,7 @@ input:focus{
         </div>  
 <script>
 var me = {};
+var a=0;
 me.avatar = "https://lh6.googleusercontent.com/-lr2nyjhhjXw/AAAAAAAAAAI/AAAAAAAARmE/MdtfUmC0M4s/photo.jpg?sz=48";
 
 var you = {};
@@ -189,8 +190,25 @@ $(".mytext").on("keydown", function(e){
 			type: "get", 
 			cache: false,	
 			data:{tt:text},
-			success: function(response) {
-				console.log(response);
+			success: function(response){
+				if(a==0){
+				insertChat("me", 'Shall I take your registered location?' , 1500);
+				a=a+1;
+				}
+				else if(a==1){
+					insertChat("me", 'Your truck is booked and it will reach your location' , 1500);
+					a=a+1;
+				}
+				else if(a==2){
+					insertChat("me", 'Yes sure. We will intimate you once the truck leaves the garbage yard' , 1500);
+					insertChat("me", 'The truck started from Perungudi Garbage yard.' , 3000);
+					insertChat("me", 'Truck is 40km away from your location!!!' , 5000);
+					insertChat("me", 'Truck is 20km away from your location!!!' , 7000);
+					insertChat("me", 'Truck is 5km away from your location!!!' , 9000);
+					insertChat("me", 'Truck is 1km away from your location!!!' , 10000);
+					insertChat("me", 'Truck will reach your location in 5 minutes!!!' , 12000);
+					a=a+1;
+				}
 			},
 			error: function(xhr) {
 			}
@@ -208,7 +226,7 @@ $('body > div > div > div:nth-child(2) > span').click(function(){
 resetChat();
 
 //-- Print Messages
-insertChat("me", '{{ t }}' , 0);  
+insertChat("me", 'Hi '+ '{{t}}'+'!!!!!'+'        '+'I think your garbage bag is ready, Shall I book a truck to collect your garbage bag???? ', 0);  
 
 //insertChat("you", "Hi, Pablo", 1500);
 //insertChat("me", '{{ t }}', 0);
@@ -218,6 +236,9 @@ insertChat("me", '{{ t }}' , 0);
 
 
 //-- NOTE: No use time on insertChat.
-</script>		
+</script>	
+<form id="form-admin" action='/user_login' method="">
+<button class="button" type ="submit" style="margin-left: 121px;margin-top: 149;"><span>BACK TO USER LOGIN</span></button>
+</form>	
     </body>
 </html>

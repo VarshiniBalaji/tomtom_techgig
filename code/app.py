@@ -52,8 +52,8 @@ def login_val():
       txt=talk(i,n=name)
       print(txt)
       if(v=="True"):
-        return render_template("chatbot.html",t=txt)
-		 
+         # if(name=="varsh"):
+         return render_template("chatbot.html",t=name)
 @app.route('/test',methods = ['POST', 'GET'])
 def test():
    text=request.args.get("tt")

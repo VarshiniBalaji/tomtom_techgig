@@ -1,4 +1,4 @@
-	<!DOCTYPE html>
+<!DOCTYPE html>
 	<html>
 	<head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,14 +23,12 @@
   cursor: pointer;
   margin: 30px;
 }
-
 .button span {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
-
 .button span:after {
   content: '\00bb';
   position: absolute;
@@ -39,11 +37,9 @@
   right: -20px;
   transition: 0.5s;
 }
-
 .button:hover span {
   padding-right: 25px;
 }
-
 .button:hover span:after {
   opacity: 1;
   right: 0;
@@ -53,6 +49,7 @@
 
 	<header>
 	    <h1>TomTom India Hackathon</h1>
+      <h2>On Demand Garbage Collection</h2>
 	</header>
 	<center>
 	<h1>Select your Preference</h1>
@@ -62,6 +59,9 @@
 </form>
 <form id="form-admin" action='/user_login' method="">
 <button class="button" type ="submit"><span>LOGIN</span></button>
+</form>
+<form id="form-admin" action='/' method="">
+<button class="button" type ="submit"><span>BACK</span></button>
 </form>
 </center>
 </body>

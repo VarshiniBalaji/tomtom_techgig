@@ -23,6 +23,14 @@ def user():
 def admin():
    return render_template('admin.html')
    
+@app.route('/map')
+def map():
+   df=pd.read_csv('db/datall.csv')
+   lat=list(df['latitude'])
+   lon=list(df['longitude'])
+   print(lat,lon)
+   return render_template('map.html',lat=lat,lon=lon)
+   
 @app.route('/user_reg')
 def user_reg():
    return render_template('reg.html')
@@ -52,8 +60,8 @@ def login_val():
       txt=talk(i,n=name)
       print(txt)
       if(v=="True"):
-        return render_template("chatbot.html",t=txt)
-		 
+         # if(name=="varsh"):
+         return render_template("chatbot.html",t=name)
 @app.route('/test',methods = ['POST', 'GET'])
 def test():
    text=request.args.get("tt")

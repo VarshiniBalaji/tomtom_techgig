@@ -1,0 +1,48 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<title>My map</title> 
+        <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename = 'sdk/map.css') }}"/> 
+        <script src="{{ url_for('static', filename = 'sdk/tomtom.min.js') }}"></script> 
+        <style>
+          #map {
+              height: 1000px;
+              width: 1000px;
+          }
+        </style>
+    </head> 
+    <body> 
+        <div id='map'></div> 
+        <script> 
+            // tomtom.L.map('map', {key: 'oyq2afLK8q9KJG8yDiojI3gldjCBkkN0'});
+//             var map = new google.maps.Map(document.getElementById('map'), { 
+//   center: { lat: 13.0827, lng: 80.2707},
+//   zoom: 1   
+// });
+tomtom.setProductInfo('TOMTOM', '4.40.10');
+var markerOptions = {
+    icon: tomtom.L.icon({
+          iconUrl: "{{ url_for('static', filename = 'marker-icon.png') }}",
+        iconSize: [30, 34],
+        iconAnchor: [15, 34]
+    })
+};
+var map = tomtom.map('map', {
+    key: 'oyq2afLK8q9KJG8yDiojI3gldjCBkkN0',
+    source: 'vector',
+    basePath: "{{ url_for('static', filename = 'sdk/') }}"
+});
+tomtom.L.marker([{{lat[0]}}, {{lon[0]}}], markerOptions).addTo(map);
+tomtom.L.marker([{{lat[1]}}, {{lon[1]}}], markerOptions).addTo(map);
+tomtom.L.marker([{{lat[2]}}, {{lon[2]}}], markerOptions).addTo(map);
+tomtom.L.marker([{{lat[3]}}, {{lon[3]}}], markerOptions).addTo(map);
+map.setView([11.1271, 78.6569], 4);
+
+// tomtom.L.marker([13.0827, 80.2707]).addTo(map);
+        </script> 
+    </body>
+</html>
+
+
+
+
